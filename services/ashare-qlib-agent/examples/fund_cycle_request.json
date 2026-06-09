@@ -1,0 +1,18 @@
+{
+  "config_path": "config.real-local.yaml",
+  "portfolio": {
+    "cash": 30000,
+    "equity": 100000,
+    "positions": [
+      {
+        "symbol": "BOND001",
+        "shares": 0,
+        "available_shares": 0,
+        "market_value": 20000,
+        "weight": 0.2,
+        "category": "bond",
+        "fund_type": "LOF"
+      }
+    ]
+  }
+}

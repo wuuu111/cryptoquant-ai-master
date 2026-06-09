@@ -1,0 +1,57 @@
+data_dir: ./data
+registry_dir: ./registry
+provider: akshare
+fetch_workers: 1
+start_date: "20240101"
+end_date: ""
+portfolio:
+  initial_cash: 1000000
+  fee_rate: 0.0005
+  max_position_weight: 0.20
+  cash_reserve_weight: 0.05
+fund_data:
+  source: akshare
+  fund_pool_file: fund_pool.csv
+  fund_nav_file: fund_nav_daily.csv
+  fund_metadata_file: fund_metadata.csv
+  benchmark_file: benchmark_index.csv
+  portfolio_mode: balanced
+  stale_nav_days: 5
+  benchmark_index_code: "000300"
+  reference_date: ""
+  fund_codes: []
+  fund_type_keywords:
+    - ETF
+    - LOF
+    - 指数
+    - 债券
+    - 货币
+    - QDII
+    - 商品
+    - 混合
+  max_funds: 40
+database:
+  enabled: false
+  url: ""
+  schema: public
+  mirror_csv: true
+  save_cycles: true
+account:
+  default_account_id: default
+  base_currency: CNY
+fund_graph:
+  enabled: true
+  llm_enabled: true
+  llm_api_key: ${ASHARE_LLM_API_KEY:-}
+  llm_model: ${ASHARE_LLM_MODEL:-deepseek-v4-flash}
+  llm_base_url: ${ASHARE_LLM_BASE_URL:-https://api.deepseek.com}
+  llm_timeout: ${ASHARE_LLM_TIMEOUT:-20}
+  llm_retries: ${ASHARE_LLM_RETRIES:-1}
+scheduler:
+  enabled: false
+  interval_minutes: 1440
+  run_on_startup: true
+  sync_before_cycle: true
+  portfolio_file: ""
+  start_date: ""
+  end_date: ""

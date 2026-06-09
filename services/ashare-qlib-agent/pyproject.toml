@@ -1,0 +1,45 @@
+[project]
+name = "ashare-qlib-agent"
+version = "0.1.0"
+description = "Fund rotation agent service powered by AkShare and local CSV workflows."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+api = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "pydantic>=2.7",
+  "httpx>=0.27",
+]
+research = [
+  "akshare>=1.15",
+  "pandas>=2.2",
+  "numpy>=1.26",
+  "pyyaml>=6.0",
+]
+storage = [
+  "sqlalchemy>=2.0",
+  "psycopg[binary]>=3.2",
+]
+dev = [
+  "pytest>=8.0",
+]
+
+[project.scripts]
+ashare-agent = "ashare_qlib_agent.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.mypy]
+python_version = "3.10"
+
+[[tool.mypy.overrides]]
+module = ["akshare"]
+ignore_missing_imports = true
+
+[tool.setuptools.packages.find]
+include = ["ashare_qlib_agent*"]
+exclude = ["app*", "tests*"]

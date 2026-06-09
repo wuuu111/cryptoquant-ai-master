@@ -1,0 +1,34 @@
+{
+  "cash": 150000,
+  "equity": 500000,
+  "positions": [
+    {
+      "symbol": "EQCORE",
+      "market_value": 180000,
+      "weight": 0.36,
+      "category": "equity",
+      "fund_type": "ETF"
+    },
+    {
+      "symbol": "BOND01",
+      "market_value": 170000,
+      "weight": 0.34,
+      "category": "bond",
+      "fund_type": "LOF"
+    },
+    {
+      "symbol": "GOLD01",
+      "market_value": 50000,
+      "weight": 0.10,
+      "category": "commodity",
+      "fund_type": "ETF"
+    },
+    {
+      "symbol": "CASH01",
+      "market_value": 100000,
+      "weight": 0.20,
+      "category": "cash",
+      "fund_type": "money_market"
+    }
+  ]
+}
