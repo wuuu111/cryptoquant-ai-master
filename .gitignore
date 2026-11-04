@@ -8,3 +8,11 @@ services/ashare-qlib-agent/registry/
 services/ashare-qlib-agent/orders/
 services/ashare-qlib-agent/frontend/node_modules/
 services/ashare-qlib-agent/frontend/dist/
+
+# Local environments and generated runtime artifacts
+**/.venv*/
+**/*.egg-info/
+**/__pycache__/
+**/.pytest_cache/
+**/.env
+artifacts/
